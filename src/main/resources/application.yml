@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: finance-monitor
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+server:
+  port: ${PORT:8080}
+logging:
+  level:
+    com.example.finance: INFO

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.finance.controller.AuthApiControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.059 s <<< FAILURE! - in com.example.finance.controller.AuthApiControllerTest
+invalidRegistrationIsBadRequest  Time elapsed: 0.064 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<401>
+	at com.example.finance.controller.AuthApiControllerTest.invalidRegistrationIsBadRequest(AuthApiControllerTest.java:3)
+
