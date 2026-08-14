@@ -1,1 +1,21 @@
-import axios from 'axios'; const api=axios.create({baseURL:'http://localhost:8080/api',withCredentials:true}); export const auth={register:d=>api.post('/auth/register',d)}; export const categories={list:()=>api.get('/categories'),create:d=>api.post('/categories',d),remove:id=>api.delete(`/categories/${id}`)}; export const transactions={list:(from,to)=>api.get('/transactions',{params:{from,to}}),create:d=>api.post('/transactions',d),update:(id,d)=>api.put(`/transactions/${id}`,d),remove:id=>api.delete(`/transactions/${id}`)}; export const analytics={metrics:(from,to)=>api.get('/analytics/metrics',{params:{from,to}})}; export const reports={preview:p=>api.get('/reports/preview',{params:p}),download:p=>api.get('/reports/export',{params:p,responseType:'blob'})}; export default api;
+import axios from 'axios';
+
+const api = axios.create({baseURL: 'http://localhost:8080/api', withCredentials: true});
+export const auth = {register: d => api.post('/auth/register', d)};
+export const categories = {
+    list: () => api.get('/categories'),
+    create: d => api.post('/categories', d),
+    remove: id => api.delete(`/categories/${id}`)
+};
+export const transactions = {
+    list: (from, to) => api.get('/transactions', {params: {from, to}}),
+    create: d => api.post('/transactions', d),
+    update: (id, d) => api.put(`/transactions/${id}`, d),
+    remove: id => api.delete(`/transactions/${id}`)
+};
+export const analytics = {metrics: (from, to) => api.get('/analytics/metrics', {params: {from, to}})};
+export const reports = {
+    preview: p => api.get('/reports/preview', {params: p}),
+    download: p => api.get('/reports/export', {params: p, responseType: 'blob'})
+};
+export default api;

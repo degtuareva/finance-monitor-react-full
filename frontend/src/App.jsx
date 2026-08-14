@@ -1,1 +1,18 @@
-import {BrowserRouter,Link,Route,Routes,Navigate} from 'react-router-dom'; import Register from './pages/Register'; import Dashboard from './pages/Dashboard'; import Categories from './pages/Categories'; import Transactions from './pages/Transactions'; import Reports from './pages/Reports'; const Nav=()=> <nav><Link to="/dashboard">Дашборд</Link><Link to="/transactions">Транзакции</Link><Link to="/categories">Категории</Link><Link to="/reports">Отчёты</Link></nav>; export default function App(){return <BrowserRouter><Nav/><main><Routes><Route path="/register" element={<Register/>}/><Route path="/dashboard" element={<Dashboard/>}/><Route path="/transactions" element={<Transactions/>}/><Route path="/categories" element={<Categories/>}/><Route path="/reports" element={<Reports/>}/><Route path="*" element={<Navigate to="/dashboard"/>}/></Routes></main></BrowserRouter>}
+import {BrowserRouter, Link, Navigate, Route, Routes} from 'react-router-dom';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Categories from './pages/Categories';
+import Transactions from './pages/Transactions';
+import Reports from './pages/Reports';
+
+const Nav = () => <nav><Link to="/dashboard">Дашборд</Link><Link to="/transactions">Транзакции</Link><Link
+    to="/categories">Категории</Link><Link to="/reports">Отчёты</Link></nav>;
+export default function App() {
+    return <BrowserRouter><Nav/>
+        <main><Routes><Route path="/register" element={<Register/>}/><Route path="/dashboard"
+                                                                            element={<Dashboard/>}/><Route
+            path="/transactions" element={<Transactions/>}/><Route path="/categories" element={<Categories/>}/><Route
+            path="/reports" element={<Reports/>}/><Route path="*" element={<Navigate to="/dashboard"/>}/></Routes>
+        </main>
+    </BrowserRouter>
+}
