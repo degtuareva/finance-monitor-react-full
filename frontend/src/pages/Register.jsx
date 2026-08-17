@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import {auth} from '../api';
+import {Link, useNavigate} from 'react-router-dom';
+
 
 export default function Register() {
     const [f, setF] = useState({name: '', email: '', password: '', confirmPassword: ''}), [m, setM] = useState('');
